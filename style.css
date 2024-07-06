@@ -1,0 +1,822 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #b58094;
+  --secondary-color: #e4efe9;
+  --yelow-color: #FAEF5D;
+  --tertiary-color: #010505;
+  --white-color: #f4f4f4;
+  --quinary-color: #333;
+  --primary-font: 'Manrope', sans-serif;
+  --logo-color: rgb(50, 163, 197);
+  --background-color: #acb5c1;
+  --background-grey: #272829;
+  --background-black: #000;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 100%;
+  width: 100%;
+  color: #000;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+  background: var(--background-grey);
+}
+
+a {
+  text-decoration: none;
+}
+
+.astronaut {
+  right: 200px;
+  /* Đặt cách lề phải 200px */
+  animation: float 4s ease-in-out infinite;
+  /* Thêm hiệu ứng nổi lên xuống */
+  background-color: rgba(156, 156, 156, 0.5);
+  /* Màu nền bán trong suốt */
+  border-radius: 50%;
+  /* Làm cho nền có hình tròn */
+  box-shadow: 0 0 30px 10px rgba(156, 156, 156, 0.7);
+  /* Thêm hiệu ứng sáng xung quanh */
+  padding: 20px;
+  /* Thêm khoảng cách bên trong, điều chỉnh nếu cần */
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.app-header {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  padding: 10px 100px;
+  background-image: url('./assets/images/bg3.jpg');
+  background-size: cover;
+  position: relative;
+}
+
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  /* Chiều cao của phần mờ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  /* Điều chỉnh độ mờ */
+  pointer-events: none;
+  /* Để không làm ảnh hưởng đến các phần tử khác */
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 100px;
+  box-sizing: border-box;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+
+.logo {
+  color: var(--white-color);
+  font-size: 24px;
+  transition: 0.3s all;
+  cursor: pointer;
+  text-shadow: 0 0 25px var(--secondary-color);
+
+}
+
+.logo span {
+  color: var(--yelow-color);
+  text-shadow: 2px 2px 5px rgba(6, 216, 181, 0.3);
+  /* Thêm hiệu ứng bóng đổ cho phần span */
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-right: 30px;
+  transition: 0.3s all;
+
+}
+
+.navbar a {
+  color: var(--white-color);
+  font-weight: bold;
+  transition: 0.3s all;
+  text-shadow: 0 0 25px var(--secondary-color);
+}
+
+.navbar a:hover {
+  color: var(--yelow-color);
+}
+
+.navbar li:hover {
+  transform: scale(1.1);
+
+}
+
+.content {
+  max-height: 100vh;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.main-content h3 {
+  font-size: 30px;
+  padding: 10px 0;
+  color: var(--white-color);
+  font-weight: bold;
+}
+
+.main-info {
+  width: 50%;
+}
+
+.main-info h3 {
+  font-size: 30px;
+  color: var(--white-color);
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.main-info p {
+  font-size: 20px;
+  color: var(--white-color);
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.main-info h1 {
+  font-size: 50px;
+  color: var(--yelow-color);
+  text-shadow: 0 0 25px var(--white-color);
+  font-weight: regular 400;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px 20px;
+  background: #93a5cf;
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  margin-top: 20px;
+  transition: 0.3s all;
+  border-radius: 30px;
+  box-shadow: 0 0 25px var(--secondary-color);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.btn-group {
+  display: flex;
+  width: 100%;
+}
+
+.btn-group a:nth-child(1) {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 1px solid var(--white-color);
+  box-shadow: 0 0 25px;
+}
+
+.btn-group a:nth-child(1):hover {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--primary-color);
+}
+
+.btn-group a:nth-of-type(2) {
+  background-color: transparent;
+  color: var(--white-color);
+  border: 2px solid var(--white-color);
+  box-shadow: 0 0 25px;
+}
+
+.btn-group a:nth-of-type(2):hover {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--primary-color);
+}
+
+.social-media {
+  display: flex;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.social-media a {
+  margin-right: 20px;
+  font-size: 30px;
+  color: #000;
+  transition: 0.3s all;
+
+}
+
+.social-media a i {
+  color: var(--primary-color);
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  padding: 5px;
+  transition: 0.3s all;
+  box-shadow: 0 0 25px var(--secondary-color);
+  background-color: var(--white-color);
+  display: inline-block;
+}
+
+.social-media a i:hover {
+  color: var(--white-color);
+  border: 1px solid var(--primary-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--white-color);
+  background: var(--primary-color);
+  position: relative;
+
+  /* Thêm thuộc tính position để tránh ảnh hưởng đến các phần tử khác */
+}
+
+/* Text animation */
+.text-animation {
+  font-size: 30px;
+  font-weight: 600;
+  min-width: 280px;
+}
+
+.text-animation span {
+  position: relative;
+}
+
+.text-animation span::before {
+  content: "Frontend Developer";
+  animation: words 20s linear infinite;
+  color: var(--yelow-color);
+  text-shadow: 0 0 25px var(--white-color);
+}
+
+.text-animation span::after {
+  content: "";
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  width: calc(100% + 10px);
+  height: 100%;
+  border-left: 3px solid var(--primary-color);
+  right: -10px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid var(--primary-color);
+  }
+}
+
+@keyframes words {
+
+  0%,
+  20% {
+    content: "Frontend Developer";
+  }
+
+  21%,
+  40% {
+    content: "Web Designer";
+  }
+
+  41%,
+  60% {
+    content: "UI/UX Designer";
+  }
+
+  61%,
+  80% {
+    content: "Web Developer";
+  }
+
+  81%,
+  100% {
+    content: "Freelancer";
+  }
+}
+
+@keyframes typing {
+
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 10px);
+  }
+}
+
+
+.heading {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  color: var(--white-color);
+  font-weight: bold;
+  margin: 20px;
+
+}
+
+.app-education {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: calc(60px + 20px);
+  /* Chiều cao của navbar + một chút khoảng cách */
+  padding-bottom: calc(60px + 20px);
+
+}
+
+.education {
+  padding: 100px 15px;
+  background: var(--white-color);
+
+}
+
+.education h1 {
+  margin-bottom: 30px;
+}
+
+.timeline-items {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.timeline-items::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: var(--yelow-color);
+  left: calc(50% - 2.5px);
+  background: var(--yelow-color);
+}
+
+.timeline-item {
+  width: 100%;
+  position: relative;
+}
+
+.timeline-content {
+  background: transparent;
+  padding: 30px 50px;
+  border: 3px solid var(--yelow-color);
+  box-shadow: 0 0 25px var(--white-color);
+  position: relative;
+  border-radius: 40px;
+  margin: 0 30px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+
+}
+
+.timeline-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--white-color);
+}
+
+.timeline-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.timeline-item p {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+  padding-right: calc(50% - 2.5px);
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  text-align: left;
+  padding-left: calc(50% - 2.5px);
+}
+
+.timeline-dot {
+  height: 21px;
+  width: 21px;
+  background-color: var(--yelow-color);
+  box-shadow: 0 0 25px var(--white-color);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 10.5px);
+  top: 10px;
+
+}
+
+
+.timeline-date {
+  font-size: 20px;
+  color: var(--white-color);
+  font-weight: bold;
+  margin: 10px 20px;
+}
+
+.app-project {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: calc(60px + 30px);
+  background-color: var(--background-black);
+
+
+}
+
+.project-items {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 20px;
+  gap: 10px;
+  /* Tạo khoảng cách giữa các project-item */
+}
+
+.project-item {
+  width: 32%;
+  border-radius: 20px;
+  margin: 20px 0;
+  background-color: #93a5cf;
+}
+
+.project-info h3 {
+  font-size: 20px;
+  padding: 5px 20px 0 20px;
+  color: var(--yelow-color);
+}
+
+.project-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+  padding: 20px;
+
+}
+
+.project-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.project-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 20px 4px;
+  background: transparent;
+  border: 1px solid var(--white-color);
+}
+
+.project-img {
+  position: relative;
+}
+
+.project-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.project-info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  z-index: 0;
+}
+
+.project-img:hover .project-info-overlay {
+  opacity: 1;
+}
+
+.project-info-overlay h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.project-info-overlay p {
+  font-size: 16px;
+}
+
+.project-button {
+  border: 1px solid var(--white-color);
+  background-color: transparent;
+  color: #000;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.btn-project {
+  display: inline-block;
+  margin-right: 10px;
+  background: transparent;
+  border: 2px solid var(--yelow-color);
+  color: var(--white-color);
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: 0.3s all;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.btn-project:hover {
+  transform: scale(1.2);
+}
+
+.btn-project a {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-project a i {
+  font-size: 40px;
+}
+
+.app-contact {
+  /* background-color: var(--primary-color); */
+  width: 100%;
+
+  height: calc(100vh - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app-contact h2 {
+  margin-bottom: 30px;
+  color: var(--white-color);
+}
+
+.app-contact form {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.input {
+  width: 50%;
+}
+
+.app-contact form .input-box input {
+  width: 100%;
+  padding: 20px;
+  margin: 5px 0;
+  font-size: 18px;
+  color: var(--white-color);
+  border: 2px solid var(--yelow-color);
+  background: transparent;
+  resize: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.app-contact form .input-group-2 textarea {
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  font-size: 18px;
+  color: var(--white-color);
+  background: transparent;
+  resize: none;
+  border: 2px solid var(--yelow-color);
+
+  border-radius: 10px;
+  outline: none;
+}
+
+input,
+button,
+textarea {
+  font-family: 'Poppins', sans-serif;
+  color: var(--white-color);
+}
+
+.app-contact .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+  padding: 10px 15px;
+  margin-top: 30px;
+  box-shadow: none;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--white-color);
+  background: transparent;
+  border: 2px solid var(--yelow-color);
+}
+
+.app-contact .btn:hover {
+  color: var(--black-color);
+  background: var(--yelow-color);
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-black);
+  color: var(--white-color);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.app-footer .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-footer .social-media a:hover {
+  transform: scale(1.1);
+
+}
+
+.footer-menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.footer-menu ul li {
+  margin-right: 30px;
+  padding: 20px 0;
+  transition: 0.3s all;
+}
+
+.footer-menu li:hover {
+  transform: scale(1.1);
+}
+
+.footer-menu a {
+  color: var(--white-color);
+  font-weight: bold;
+  transition: 0.3s all;
+}
+
+.footer-menu a:hover {
+  color: var(--yelow-color);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 100px;
+}
+
+.footer p {
+  padding: 20px 0;
+}
+
+.footer h4 {
+  padding: 20px 0;
+  font-weight: normal;
+}
